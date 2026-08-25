@@ -1,0 +1,62 @@
+name: Regenerate content index and site files
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/content/**/*.md'
+      - 'src/content/settings.txt'
+      - 'index.html'
+      - 'scripts/**'
+      # og:image/twitter:image are generate-time outputs (buildHeadBlock), so
+      # pushing an asset (e.g., profile.jpg) must re-run the generators.
+      - 'src/assets/**'
+
+# Serialize runs per ref: rapid pushes would otherwise race the auto-commit
+# step (the last writer wins, losing regenerated artifacts). cancel-in-progress
+# stays false — a queued run completes, never gets killed mid-commit.
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    name: Regenerate index.json, head, sitemap, robots
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          # Default depth 1 is enough: the generators only need the working
+          # tree, and git-auto-commit-action commits the current changes.
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22'
+
+      - name: Build index.json
+        run: node scripts/generate-index.js
+
+      - name: Build head, sitemap.xml, robots.txt, 404.html
+        run: node scripts/generate-site.js
+
+      - name: Commit updated files
+        uses: stefanzweifel/git-auto-commit-action@b863ae1933cb653a53c021fe36dbb774e1fb9403 # v5
+        with:
+          # [skip ci] keeps the auto-commit from re-triggering this workflow:
+          # it rewrites the same artifact paths the push filter watches, so
+          # without the marker every content push would spawn a redundant
+          # second run. The fork's own push (no skip marker) still triggers.
+          commit_message: 'chore(content): regenerate index and site files [skip ci]'
+          file_pattern: |
+            src/content/**/index.json
+            index.html
+            sitemap.xml
+            robots.txt
+            404.html
+          push_to_current_branch: true

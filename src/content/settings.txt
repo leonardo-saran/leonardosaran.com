@@ -1,0 +1,171 @@
+# ============================================================
+# Site settings: single source of truth for site identity,
+# language configuration, and UI translations.
+# Format: `key = value` lines. Lines starting with `#` are
+# comments. Values are trimmed and used verbatim (no quoting).
+# Inline comments: `key = value # note`: everything after the
+# first ` #` is ignored; a `#` with no space before it stays
+# part of the value. Unknown keys are stored inert and never
+# executed. The dynamic blank post title uses `post.title = # Post
+# title`; its annotation is ignored and the parsed value stays empty.
+# ============================================================
+
+# ============================================================
+# HOW TO TRANSLATE THIS FILE WITH AN AI ASSISTANT
+# 1. Set the language fields below first:
+#      lang.code  = 2–3 letter language code (e.g., pt, de, fr)
+#      lang.label = language name in its own language
+#                   (e.g., Português, Deutsch, Français)
+# 2. In the instruction below, replace <your language> with the
+#    full language name (e.g., "Portuguese").
+# 3. Copy the ENTIRE content of this file (including this header).
+# 4. Paste it into your AI assistant and send exactly this:
+#    "Translate the UI values after '=' into <your language>.
+#     Keep every key and every '#' English original unchanged.
+#     Update lang.code with the 2–3 letter code and lang.label
+#     with the language name in its own language.
+#     Return the complete file content."
+# 5. Replace this file with the AI output and save.
+# ============================================================
+
+# ===== Site identity =====
+# Site display name (used in title, JSON-LD, About heading)
+site.name = Leonardo Saran
+# Site tagline (used in meta description fallback and JSON-LD)
+site.tagline = Software Engineering Student at Pontifical Catholic University of Rio de Janeiro.
+# Site meta description (used in <meta name="description"> and JSON-LD)
+site.description = Personal blog and portfolio.
+# Site domain (used for canonical URLs, sitemap.xml, robots.txt)
+site.domain = https://leonardosaran.com/
+# Author name (used in the meta author tag)
+site.author = Leonardo Saran
+# Author job title (used in JSON-LD Person)
+site.jobTitle = Software Engineering Student
+# Social link values accept three forms:
+#   handle: a bare username/handle (e.g. my-user): the network base is prefixed
+#   normalized: no scheme, starting with the network domain (e.g. youtube.com/@my-channel)
+# - rewritten to the canonical base
+#   url: full profile URL with an explicit scheme (e.g. https://github.com/my-user)
+# - used verbatim (any domain)
+# Any other value WITHOUT a scheme is treated as a HANDLE and prefixed; for an
+# external domain, always write the full https:// URL (or leave the network disabled).
+# Email always uses mailto: + value.
+# X (Twitter) profile URL or handle (footer link; hidden until enabled with a value)
+site.x = your-username
+# Show the X link in the footer: true = show, false = hide
+site.x.enabled = false
+# Instagram profile URL or handle (footer link; hidden until enabled with a value)
+site.instagram = your-username
+# Show the Instagram link in the footer: true = show, false = hide
+site.instagram.enabled = false
+# YouTube channel URL or handle (footer link; hidden until enabled with a value)
+site.youtube = your-username
+# Show the YouTube link in the footer: true = show, false = hide
+site.youtube.enabled = false
+# GitHub profile URL or handle (footer link + JSON-LD sameAs)
+site.github = https://github.com/leonardo-saran
+# Show the GitHub link in the footer: true = show, false = hide
+site.github.enabled = true
+# LinkedIn profile URL or handle (footer link + JSON-LD sameAs)
+site.linkedin = https://linkedin.com/in/your-username
+# Show the LinkedIn link in the footer: true = show, false = hide
+site.linkedin.enabled = false
+# Contact email (footer email link + JSON-LD)
+site.email = you@example.com
+# Show the email link in the footer: true = show, false = hide
+site.email.enabled = false
+# Copyright line shown in the footer; {year} expands to the current year on generate
+site.copyright = © {year} Leonardo Saran - All rights reserved. # {year} expands to the current year on generate
+
+# ===== Language =====
+# Enable second language: true = bilingual, false = English only
+lang.enabled = true
+# Language code: 2–3 letters (ISO 639-1/639-2). Auto-normalized: uppercase and regional
+# forms are accepted and converted (DE → de, de-DE → de, pt-BR → pt). Used for
+# index.{code}.md files; the date locale derives from it (de → de-DE, pt → pt-BR).
+# Non-code values (e.g. "english") disable the second language: the toggle hides.
+# Common codes:
+#   pt Portuguese · de German · fr French · es Spanish · it Italian
+#   nl Dutch · sv Swedish · no Norwegian · da Danish · fi Finnish
+#   pl Polish · cs Czech · hu Hungarian · ro Romanian · el Greek
+#   tr Turkish · ru Russian · uk Ukrainian · ja Japanese · ko Korean
+#   zh Chinese* · ar Arabic · he Hebrew · hi Hindi · th Thai
+#   * zh maps to zh-CN via the locale map.
+# Full list: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+lang.code = pt
+# Human-readable language name: informational only, not displayed
+lang.label = Português
+
+# ===== UI translations (second language: Portuguese) =====
+# Keys mirror src/js/settings.js EN_TRANSLATIONS. Missing keys fall
+# back to the embedded English dictionary. The English original is
+# appended after ` # ` on each line for reference.
+
+# --- Navigation ---
+nav.about = Sobre # About
+nav.archive = Arquivo # Archive
+nav.portfolio = Portfólio # Portfolio
+
+# --- Common ---
+common.search = Buscar... # Search...
+common.orderBy = Ordenar por # Order by
+common.newest = Mais recentes # Newest
+common.oldest = Mais antigos # Oldest
+common.az = A-Z # A-Z
+common.za = Z-A # Z-A
+common.noResults = Nenhum post encontrado para sua busca. # No posts found matching your search.
+common.noPortfolioResults = Nenhum projeto encontrado para sua busca. # No portfolio items found matching your search.
+common.loading = Carregando... # Loading...
+common.skipToContent = Pular para o conteúdo # Skip to content
+common.prevPage = Página anterior # Previous page
+common.nextPage = Próxima página # Next page
+# {n} is replaced at runtime with the page number
+common.page = Página {n} # Page {n}
+common.copyCode = Copiar código # Copy code
+common.toggleTheme = Alternar tema # Toggle theme
+common.toggleLanguage = Alternar idioma # Toggle language
+# {label} is replaced at runtime with the active language name
+common.langToggleCurrent = Alternar idioma - atual: {label} # Toggle language - current: {label}
+common.sortPosts = Ordenar posts # Sort posts
+common.sortPortfolio = Ordenar portfólio # Sort portfolio
+
+# --- Breadcrumb ---
+breadcrumb.archive = Arquivo # Archive
+breadcrumb.portfolio = Portfólio # Portfolio
+breadcrumb.post = Post # Post
+breadcrumb.notFound = Não encontrado # Not Found
+
+# --- Post ---
+# Keys published as stable contract but currently unused by the runtime: post.back, post.notFound.body, tag.prompt: translate them for future-proofing; the UI does not render them today.
+post.title = Título do post # Post title
+post.back = Voltar # Back
+post.readMore = Ler mais # Read more
+post.tags = Tags # Tags
+
+# --- Post not-found state ---
+post.notFound.body = O post que você procura não existe ou foi removido. # The post you're looking for doesn't exist or has been removed.
+# {label} is replaced at runtime with lang.label (e.g. "Português")
+post.notFound.unavailable = Este post ainda não está disponível em {label}. # This post is not available in {label} yet.
+
+# --- Page not-found state (unknown routes) ---
+page.notFound.title = Página não encontrada # Page not found
+page.notFound.body = A página que você procura não existe. # The page you are looking for does not exist.
+
+# --- About ---
+# OPTIONAL override for the display name on the About page. Leave this line
+# commented out and site.name is used automatically.
+# about.name =
+
+# --- Tag page ---
+tag.prompt = Digite uma tag para filtrar os posts. # Type a tag to filter posts.
+
+# --- Loading / error / empty states ---
+loading.posts = Carregando posts... # Loading posts...
+loading.projects = Carregando projetos... # Loading projects...
+error.posts = Falha ao carregar os posts. # Failed to load posts.
+error.projects = Falha ao carregar os projetos. # Failed to load projects.
+empty.posts = Nenhum post ainda. # No posts yet.
+empty.projects = Nenhum projeto ainda. # No projects yet.
+
+# --- Footer ---
+footer.copyright = © {year} Your Name - Todos os direitos reservados. # © {year} Your Name - All rights reserved.

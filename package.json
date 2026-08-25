@@ -1,0 +1,15 @@
+{
+  "name": "blog-template",
+  "private": true,
+  "description": "Zero-dependency bilingual static blog template (English + configurable second language).",
+  "license": "MIT",
+  "author": "Your Name",
+  "keywords": ["static-site", "blog", "template", "bilingual", "zero-dependency"],
+  "type": "commonjs",
+  "scripts": {
+    "generate": "node scripts/generate-index.js && node scripts/generate-site.js"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

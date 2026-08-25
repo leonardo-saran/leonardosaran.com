@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-+9dyex551KYNANH+qE3H4p1NiwdZbkWs6hRtE0hMUdA='; style-src 'sha256-9u4n6sJp5IWes4TSjjwDHwqgzGWjS24w4eUXJtiXYw0='; base-uri 'none'; form-action 'none'">
+<style>body{background:#F5F5F5}body.dark{background:#1A1A1A}@media(prefers-color-scheme:dark){body{background:#1A1A1A}}</style>
+<title>Redirecting...</title>
+</head>
+<body>
+<script>try{sessionStorage.setItem('redirect',location.pathname+location.search+location.hash);}catch(e){}try{if(localStorage.getItem('theme')==='dark')document.body.classList.add('dark')}catch(e){}location.replace((function(){var s=location.pathname.split('/').filter(Boolean);return s.length>=2&&!['about','archive','portfolio','post','tag'].includes(s[0])?'/'+s[0]+'/':'/';})());</script>
+</body>
+</html>
