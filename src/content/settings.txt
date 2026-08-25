@@ -168,4 +168,4 @@ empty.posts = Nenhum post ainda. # No posts yet.
 empty.projects = Nenhum projeto ainda. # No projects yet.
 
 # --- Footer ---
-footer.copyright = © {year} Your Name - Todos os direitos reservados. # © {year} Your Name - All rights reserved.
+footer.copyright = © {year} Leonardo Saran - Todos os direitos reservados. # © {year} Your Name - All rights reserved.
