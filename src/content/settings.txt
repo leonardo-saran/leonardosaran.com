@@ -36,7 +36,7 @@ site.tagline = Software Engineering Student at Pontifical Catholic University of
 # Site meta description (used in <meta name="description"> and JSON-LD)
 site.description = Personal blog and portfolio.
 # Site domain (used for canonical URLs, sitemap.xml, robots.txt)
-site.domain = https://leonardosaran.com/
+site.domain = leonardosaran.com
 # Author name (used in the meta author tag)
 site.author = Leonardo Saran
 # Author job title (used in JSON-LD Person)
