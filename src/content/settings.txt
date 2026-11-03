@@ -32,7 +32,7 @@
 # Site display name (used in title, JSON-LD, About heading)
 site.name = Leonardo Saran
 # Site tagline (used in meta description fallback and JSON-LD)
-site.tagline = Documenting a genuine lifelong passion for technology.
+site.tagline = Documenting my journey in technology.
 # Site meta description (used in <meta name="description"> and JSON-LD)
 site.description = Personal blog and portfolio.
 # Site domain (used for canonical URLs, sitemap.xml, robots.txt)
