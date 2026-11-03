@@ -1,8 +1,7 @@
 # leonardosaran.com
 
 My personal blog and living portfolio: documenting my journey through
-my Software Engineering postgraduate program, projects, and career
-transition into tech.
+technology.
 
 **[Read it here](https://leonardosaran.com)**
 
